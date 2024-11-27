@@ -14,18 +14,18 @@ def transform_data_map_to_dataframe(data_map:map):
     data = pd.DataFrame(data=data_map)  
     return data
 
-def transform_feateares(data:pd.DataFrame):
-
-    # POUR PRÉPARER LES DONNÉES À LA PRÉDICTION
-
-    if(data is pd.DataFrame):
-        df['MS SubClass'] = df['MS SubClass'].apply(str)
-        df_nums = df.select_dtypes(exclude='object')
-        df_objs = df.select_dtypes(include='object')
-        df_objs = pd.get_dummies(df_objs,drop_first=True)
-        final_df = pd.concat([df_nums,df_objs],axis=1)
-        return final_df
-    return None
+# def transform_feateares(data:pd.DataFrame):
+#
+#     # POUR PRÉPARER LES DONNÉES À LA PRÉDICTION
+#
+#     if(data is pd.DataFrame):
+#         df['MS SubClass'] = df['MS SubClass'].apply(str)
+#         df_nums = df.select_dtypes(exclude='object')
+#         df_objs = df.select_dtypes(include='object')
+#         df_objs = pd.get_dummies(df_objs,drop_first=True)
+#         final_df = pd.concat([df_nums,df_objs],axis=1)
+#         return final_df
+#     return None
 
 def predict(data:pd.DataFrame):
     
